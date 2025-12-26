@@ -1,0 +1,23 @@
+Linux
+Distribution - different diff versions like
+Footprint - not easily detectable
+Reliable - 
+FOSS - Free Open Source Software
+Terminal - It directly interact with the system 
+	like directories, content
+SSH - Secure Shell 
+PuTTY - client connect though cloud like aws
+binary - machine understandable language
+log files - any application running on system log file contailn track the information of application
+
+mkdir test
+-sh-4.2$ cd test                                                                      
+-sh-4.2$ touch file1.txt                                                              
+-sh-4.2$ cp file1.txt file2.txt                                                       
+-sh-4.2$ mv file2.txt newfile.txt                                                     
+-sh-4.2$ rm file1.txt                                                        
+-sh-4.2$
+
+github repository:
+
+https://github.com/dameeta/cognizant-pune-2025            

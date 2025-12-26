@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // localStorage.setItem('username', 'Vaibhav');
+      // alert(localStorage.getItem('username'));
+
+      // sessionStorage.setItem("username", "Vikas");
+      // alert(sessionStorage.getItem("username"));
+      // sessionStorage.removeItem("username");
+
+
+      function getLoc() {
+        navigator.geolocation.getCurrentPosition((pos) =>
+          alert(pos.coords.latitude)
+        );
+      }
+    </script>
+    <button onclick="getLoc()">Get Location</button>
+
+  </head>
+  <body></body>
+</html>

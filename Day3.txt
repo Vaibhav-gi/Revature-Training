@@ -1,0 +1,8 @@
+HTTP is stateless - The data which does not remember anythig through out the session
+
+HTTP Lifecycle
+
+Routing - navigating page like home to dashboard
+
+HTML 5
+It comes with semantic tags like meter, progress report, article, emphaze
