@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Layout Example</title>
+<style>
+  .container{
+    display: flex;
+    gap : 1rem;
+    background-color: aquamarine;
+    padding :2rem;
+  }
+.item{
+  position: relative;
+  width: 150px;
+  height: 100px;;
+  border: 2px solid #022c43;
+  background-color: #38aecc;
+  padding: 1rem;
+  font-family: Arial,sans-serif;
+  font-size: 1.2rem;
+  color: blue;
+}
+ 
+/* Adding badge using ::after pseudo-element */
+.item::after{
+  content:"New";
+  position:absolute;
+  top:0.25rem;
+  right: 0.25rem;
+  background:crimson;
+  color:wheat;
+  padding:0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+}
+ 
+</style>    
+  </head>
+  <body>
+    <h2>Flex layout with css :: after badge </h2>
+    <div class="container">
+      <div class="item">
+        Item 1
+      </div>
+      <div class="item">
+        Item 2
+      </div>
+      <div class="item">
+        Item 3
+ 
+      </div>
+    </div>
+  </body>
+</html>

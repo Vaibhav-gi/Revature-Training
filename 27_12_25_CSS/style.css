@@ -1,0 +1,32 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  place-content: 1rem;
+  border: 2px solid black;
+  padding: 1rem;
+  margin: 1rem;
+ 
+}
+.item{
+  background: lightblue;
+  border : 2px solid blue;
+  padding: 1rem;
+  margin : 0.5rem;
+  flex: 1 1 200px;
+  text-align: center;
+ 
+}
+.container1{
+  display: flex;
+}
+.item1{
+  position: relative;
+  background: #edd7d7;
+  padding:1rem;
+  margin :0.5rem;
+  border: 2px solid red;
+}
