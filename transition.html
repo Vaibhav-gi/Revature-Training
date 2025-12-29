@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* PAGE */
+      body {
+        margin: 0;
+        background-color: #87ceeb; /* sky */
+        overflow-x: hidden; /* IMPORTANT */
+      }
+
+      /* ROAD */
+      .road {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background-color: #444;
+        margin-top: 300px;
+      }
+
+      /* CAR */
+      .car {
+        position: absolute;
+        bottom: 20px;
+        width: 120px;
+
+        animation: move-car 6s linear infinite;
+      }
+
+      /* KEYFRAMES */
+      @keyframes move-car {
+        from {
+          transform: translateX(-150px);
+        }
+        to {
+          transform: translateX(100vw);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <center><h2>Car Animation</h2></center>
+    
+    <div class="road">
+    <img src="https://imgs.search.brave.com/4yV-apmBedi4KHewdLR_705VOnFV0C0znqneip8IkOo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vTUFDbFFQ/eU5qa28vMi90aHVt/Ym5haWxfbGFyZ2Ut/MS9jYW52YS1jYXIt/aXNvbGF0ZWQtb24t/d2hpdGUtTUFDbFFQ/eU5qa28ucG5n" alt="Car" class="car">
+  </div>
+  </body>
+</html>
