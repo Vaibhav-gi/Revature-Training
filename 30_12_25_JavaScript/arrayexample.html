@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Push and Pop Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    input {
+      padding: 6px;
+    }
+
+    button {
+      padding: 6px 12px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style> 
+</head>
+<body>
+
+  <h2>Fruit Array (Push & Pop)</h2>
+
+  <input type="text" id="fruitInput" placeholder="Enter fruit name">
+  <button onclick="addFruit()">Push</button>
+  <button onclick="removeFruit()">Pop</button>
+
+  <div id="output">Array: []</div>
+
+  <script>
+
+    let fruits = [];
+
+    function addFruit() {
+      const input = document.getElementById("fruitInput");
+      const fruit = input.value;
+
+      if (fruit === "") {
+        alert("Please enter a fruit name");
+        return;
+      }
+
+      fruits.push(fruit);
+      input.value = ""; 
+      displayFruits();
+    }
+
+    function removeFruit() {
+      if (fruits.length === 0) {
+        alert("Array is empty");
+        return;
+      }
+
+      fruits.pop();
+      displayFruits();
+    }
+
+    function displayFruits() {
+      document.getElementById("output").innerText =
+        "Array: [" + fruits.join(", ") + "]";
+    }
+  </script>
+
+</body>
+</html>
