@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+  <html>
+    <head>
+      <title>
+        Arrow function
+      </title>
+     
+    </head>
+    <body>
+      <script>
+        const square = (x) =>{
+          return x*x;
+        }
+        const mult = () => 2*3 ;
+        const sq = x => x*x;
+        const hello = () => "Welcome to see arrow function";
+        let data = [7,2,6,11,3];
+        let datasqure = data.map(i=>i*i);
+ 
+        function regular(){
+          this.num=2;
+          setTimeout(function (){
+            console.log(this.num);
+          },1000);
+        }
+        function arrowregular()
+        {
+          this.num =2 ;
+          setTimeout(()=>{
+            console.log("This is arrow function:",this.num);
+          },500);
+        }
+        console.log(square(3));
+        console.log(mult());
+        console.log(sq(4));
+        console.log(hello());
+        console.log(datasqure);
+        regular();
+        arrowregular();
+      </script>
+    </body>
+ 
+  </html>

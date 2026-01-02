@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>
+      Reduce example
+    </title>
+  </head>
+  <body>
+    <script>
+      const newarray = [5,8,2,9,10];
+      const sum = newarray.reduce((total , i)=>total + i ,0);
+      console.log(sum);
+      const maxvalue = newarray.reduce((x,y)=> x>y?x:y);
+      console.log(maxvalue);
+    </script>
+  </body>
+</html>
+ 

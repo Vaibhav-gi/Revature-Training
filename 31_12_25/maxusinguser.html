@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sum and Max (Separate Buttons)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    input {
+      padding: 6px;
+      width: 300px;
+    }
+    button {
+      padding: 6px 12px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Sum & Max Example</h2>
+
+  <p>Enter numbers</p>
+
+  <input type="text" id="nums" placeholder="Enter numbers">
+
+  <br><br>
+
+  <button onclick="calculateSum()">Sum</button>
+  <button onclick="calculateMax()">Max</button>
+
+  <div id="output"></div>
+
+  <script>
+    function getArray() {
+      const input = document.getElementById("nums").value;
+      if (input === "") {
+        alert("Please enter numbers");
+        return null;
+      }
+      return input.split(",").map(Number);
+    }
+
+    function calculateSum() {
+      const arr = getArray();
+      if (!arr) return;
+
+      const sum = arr.reduce((total, i) => total + i, 0);
+      document.getElementById("output").innerText =
+        "Sum = " + sum;
+    }
+
+    function calculateMax() {
+      const arr = getArray();
+      if (!arr) return;
+
+      const max = arr.reduce((x, y) => x > y ? x : y, -Infinity);
+      document.getElementById("output").innerText =
+        "Max = " + max;
+    }
+  </script>
+
+</body>
+</html>
