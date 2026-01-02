@@ -1,0 +1,12 @@
+Html
+
+Activity 1:
+
+Create index.html which will have link to sign in and sign up. First time user will click on sign up where he will ask for
+entering the details of user 
+First Name ,
+Last Name,
+Email,
+Phone number,
+The above details will be stored in localStorage and once the user successfully registers he can logged in his own dashboard
+User Dashboard will display his details such as his phone number and email id his profile photo.
