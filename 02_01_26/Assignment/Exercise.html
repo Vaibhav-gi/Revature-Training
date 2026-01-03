@@ -1,12 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment</title>
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <title>JavaScript Assignment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 600px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input {
+      padding: 6px;
+      width: 200px;
+    }
+    button {
+      padding: 6px 12px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    #arrayDisplay, #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
-    
+
+<div class="container">
+  <h2>JavaScript Assignment</h2>
+
+  <!-- PRACTICAL( Q8, Q9, Q10, Q11) -->
+  <input type="number" id="numInput" placeholder="Enter number">
+  <br><br>
+  <button onclick="pushNumber()">Push</button>
+  <button onclick="popNumber()">Pop</button>
+  <button onclick="calculateSum()">Sum</button>
+  <button onclick="calculateMax()">Max</button>
+
+  <div id="arrayDisplay">Array: []</div>
+  <div id="result"></div>
+</div>
+
+<script>
+/* =========================================================
+   Q1. Explain JavaScript Call Stack and Event Loop
+   ---------------------------------------------------------
+   Call Stack executes synchronous code line by line.
+   Asynchronous tasks (setTimeout, fetch) go to callback queue.
+   Event Loop checks if Call Stack is empty and then pushes
+   callbacks into Call Stack.
+========================================================= */
+
+
+/* =========================================================
+   Q2. Why setTimeout with 0ms executes later?
+   ---------------------------------------------------------
+   Even with 0ms delay, setTimeout is asynchronous.
+   It runs only after synchronous code completes.
+========================================================= */
+
+
+/* =========================================================
+   Q3. Explain JSON.parse()
+   ---------------------------------------------------------
+   JSON.parse() converts JSON string into JavaScript object.
+========================================================= */
+const jsonString = '{"id":1,"name":"Laptop"}';
+const jsonObj = JSON.parse(jsonString);
+
+
+/* =========================================================
+   Q4. Explain JSON.stringify()
+   ---------------------------------------------------------
+   JSON.stringify() converts JavaScript object into JSON string.
+========================================================= */
+const userObj = { name: "Admin", role: "Manager" };
+const jsonText = JSON.stringify(userObj);
+
+
+/* =========================================================
+   Q5. Explain forEach()
+   ---------------------------------------------------------
+   forEach() executes a function for each array element.
+   It does not return a new array.
+========================================================= */
+[1, 2, 3].forEach(n => console.log(n));
+
+
+/* =========================================================
+   Q6. Explain map()
+   ---------------------------------------------------------
+   map() creates a new array by transforming each element.
+========================================================= */
+const squared = [1, 2, 3].map(n => n * n);
+
+
+/* =========================================================
+   Q7. Explain filter()
+   ---------------------------------------------------------
+   filter() returns a new array with elements that satisfy condition.
+========================================================= */
+const evenNumbers = [1, 2, 3, 4].filter(n => n % 2 === 0);
+
+
+/* =========================================================
+   Q8. Explain reduce() – PRACTICAL
+   ---------------------------------------------------------
+   reduce() reduces array to a single value (sum, max, etc.)
+========================================================= */
+let numbers = [];   // Used practically below
+
+
+/* =========================================================
+   Q9. Explain push() – PRACTICAL
+   ---------------------------------------------------------
+   push() adds element at the end of array.
+========================================================= */
+function pushNumber() {
+  const input = document.getElementById("numInput");
+  if (input.value === "") return alert("Enter number");
+  numbers.push(Number(input.value));
+  input.value = "";
+  displayArray();
+}
+
+
+/* =========================================================
+   Q10. Explain pop() – PRACTICAL
+   ---------------------------------------------------------
+   pop() removes last element from array.
+========================================================= */
+function popNumber() {
+  if (numbers.length === 0) return alert("Array is empty");
+  numbers.pop();
+  displayArray();
+}
+
+
+/* =========================================================
+   Q11. Find Sum and Max using reduce() – PRACTICAL
+========================================================= */
+function calculateSum() {
+  const sum = numbers.reduce((t, n) => t + n, 0);
+  document.getElementById("result").innerText = "Sum = " + sum;
+}
+
+function calculateMax() {
+  const max = numbers.reduce((a, b) => a > b ? a : b, -Infinity);
+  document.getElementById("result").innerText = "Max = " + max;
+}
+
+function displayArray() {
+  document.getElementById("arrayDisplay").innerText =
+    "Array: [" + numbers.join(", ") + "]";
+  document.getElementById("result").innerText = "";
+}
+
+
+/* =========================================================
+   Q12. Difference between function and arrow function
+   ---------------------------------------------------------
+   Arrow functions do not have their own 'this'.
+========================================================= */
+
+
+/* =========================================================
+   Q13. Explain Closures
+   ---------------------------------------------------------
+   Closure allows inner function to access outer function variables.
+========================================================= */
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
+}
+
+
+/* =========================================================
+   Q14. Explain Callback Function
+   ---------------------------------------------------------
+   A callback is a function passed as an argument to another function.
+========================================================= */
+function greet(name, callback) {
+  callback(name);
+}
+
+
+/* =========================================================
+   Q15. Explain var, let, const
+   ---------------------------------------------------------
+   var  → function scope, can redeclare
+   let  → block scope, reassign allowed
+   const→ block scope, reassignment NOT allowed
+========================================================= */
+var a = 10;
+let b = 20;
+const c = 30;
+
+</script>
+
 </body>
 </html>
