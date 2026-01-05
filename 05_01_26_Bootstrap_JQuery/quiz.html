@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Advanced Quiz Portal</title>
 
-<!-- jQuery -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <style>
@@ -14,21 +14,34 @@ body {
   padding: 20px;
 }
 
-.quiz-wrapper {
+/* CENTER CONTAINER */
+.quiz-container {
   display: flex;
-  max-width: 1000px;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1100px;
   margin: auto;
 }
 
-/* LEFT: QUIZ AREA */
+/* QUIZ AREA */
 .quiz-box {
   flex: 3;
   background: white;
   padding: 25px;
   border-radius: 10px;
-  margin-right: 20px;
+  min-width: 300px;
 }
 
+.palette {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 220px;
+}
+
+/* QUESTION */
 .question {
   font-size: 22px;
   margin-bottom: 20px;
@@ -41,69 +54,51 @@ body {
   background: #f0f0f0;
   border: 2px solid #ccc;
   cursor: pointer;
-  font-size: 16px;
-}
-
-.option:hover {
-  background: #e0ecff;
 }
 
 .option.selected {
   background: #0d6efd;
   color: white;
-  border-color: #0d6efd;
 }
 
 /* CONTROLS */
 .controls {
-  margin-top: 20px;
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 button {
-  padding: 10px 18px;
+  padding: 10px 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
-#nextBtn { background: green; color: white; }
+#previousBtn, #nextBtn { background: green; color: white; }
 #reviewBtn { background: #0d6efd; color: white; }
 
-/* PROGRESS */
+/* TIMER + PROGRESS */
+.timer {
+  text-align: right;
+  font-weight: bold;
+}
+
 .progress {
   height: 18px;
   background: #ddd;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 .progress-bar {
   height: 100%;
-  width: 0%;
   background: linear-gradient(to right, #00c853, #64dd17);
   border-radius: 10px;
+  width: 0%;
 }
 
-.timer {
-  text-align: right;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* RIGHT: QUESTION PALETTE */
-.palette {
-  flex: 1;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.palette h4 {
-  text-align: center;
-}
-
+/* PALETTE */
 .p-box {
   width: 40px;
   height: 40px;
@@ -112,8 +107,8 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 6px;
-  font-weight: bold;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .not-answered { background: #555; color: white; }
@@ -121,7 +116,7 @@ button {
 .review { background: #0d6efd; color: white; }
 
 .legend {
-  margin-bottom: 15px;
+  margin-top: 15px;
   font-size: 14px;
 }
 
@@ -134,17 +129,68 @@ button {
 .legend-box {
   width: 14px;
   height: 14px;
-  display: inline-block;
   margin-right: 8px;
   border-radius: 3px;
 }
 
-.review-question {
-  padding: 10px;
-  cursor: pointer;
+/* LOGIN PAGE CENTERING */
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.review-question:hover {
-  background: #f1f1f1;
+
+/* LOGIN CARD */
+.login-card {
+  background: white;
+  padding: 35px;
+  width: 320px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ICON */
+.login-icon {
+  font-size: 60px;
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+.login-card h2 {
+  margin-bottom: 5px;
+}
+
+.login-card p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTON */
+.login-card button {
+  width: 100%;
+  padding: 10px;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-card button:hover {
+  background: #084298;
 }
 
 </style>
@@ -152,194 +198,150 @@ button {
 
 <body>
 
-<div class="quiz-wrapper">
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="login-wrapper">
+  <div class="login-card">
+    <i class="bi bi-person-circle login-icon"></i>
+    <h2>Welcome to Quiz Portal</h2>
+    <p>Please enter your name to start</p>
 
-  <!-- QUIZ AREA -->
-  <div class="quiz-box">
-    <div class="timer">Time Left: <span id="time">10:00</span></div>
-
-    <div class="progress">
-      <div class="progress-bar"></div>
-    </div>
-
-    <div class="question"></div>
-    <div class="options"></div>
-
-    <div class="controls">
-      <button id="reviewBtn">Mark for Review</button>
-      <button id="nextBtn">Next</button>
-    </div>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button id="startTest">Start Test</button>
   </div>
+</div>
 
-  <!-- QUESTION PALETTE -->
-  
-  
-  <div class="palette">
+<!-- QUIZ PAGE -->
+<div id="quizPage" style="display:none;">
+
+  <div class="quiz-container">
+
+    <!-- QUIZ -->
+    <div class="quiz-box">
+      <div class="timer"><i class="bi bi-clock-fill"></i> <span id="time">10:00</span></div>
+
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+
+      <div class="question"></div>
+      <div class="options"></div>
+
+      <div class="controls">
+        <button id="previousBtn">Previous</button>
+        <button id="reviewBtn">Review</button>
+        <button id="nextBtn">Next</button>
+      </div>
+    </div>
+
+    <!-- PALETTE -->
+    <div class="palette">
       <h4>Questions</h4>
-    <div id="paletteBox"></div>
+      <div id="paletteBox"></div>
 
-    <div class="legend">
-    <div><span class="legend-box answered"></span> Answered</div>
-    <div><span class="legend-box review"></span> Marked for Review</div>
-    <div><span class="legend-box not-answered"></span> Not Answered</div>
+      <div class="legend">
+        <div><span class="legend-box answered"></span> Answered</div>
+        <div><span class="legend-box review"></span> Review</div>
+        <div><span class="legend-box not-answered"></span> Not Answered</div>
+      </div>
     </div>
+
   </div>
-  
 </div>
 
 <script>
 const quiz = [
-  { q: "HTML stands for?", o: ["Hyper Text Markup Language","High Text Machine","Home Tool","Hyperlink Text"], a: 0 },
-  { q: "CSS is used for?", o: ["Logic","Styling","Database","Server"], a: 1 },
-  { q: "JavaScript is?", o: ["Compiled","Interpreted","Machine","Assembly"], a: 1 },
-  { q: "Which symbol selects ID?", o: [".","#","*","@"], a: 1 },
-  { q: "Which is a JS library?", o: ["HTML","CSS","jQuery","SQL"], a: 2 }
-  ,
-{ q: "Which HTML tag is used for a hyperlink?", 
-  o: ["&lt;a&gt;", "&lt;link&gt;", "&lt;href&gt;", "&lt;url&gt;"], 
-  a: 0 
-},
-{ q: "Which CSS property controls text color?", 
-  o: ["font-style", "background-color", "color", "text-align"], 
-  a: 2 
-},
-{ q: "Which keyword declares a block-scoped variable?", 
-  o: ["var", "let", "const", "static"], 
-  a: 1 
-},
-{ q: "Which method adds an element at the end of an array?", 
-  o: ["push()", "pop()", "shift()", "unshift()"], 
-  a: 0 
-},
-{ q: "Which jQuery function is used to handle click events?", 
-  o: ["onClick()", "click()", "press()", "hover()"], 
-  a: 1 
-}
-
+  { q:"HTML stands for?", o:["Hyper Text Markup Language","High Text","Home Tool","Hyperlink"], a:0 },
+  { q:"CSS is used for?", o:["Logic","Styling","Database","Server"], a:1 },
+  { q:"JavaScript is?", o:["Compiled","Interpreted","Assembly","Machine"], a:1 },
+  { q:"ID selector symbol?", o:[".","#","*","@"], a:1 },
+  { q:"JS library?", o:["HTML","CSS","jQuery","SQL"], a:2 },
+  { q:"Block scope variable?", o:["var","let","const","static"], a:1 },
+  { q:"Add element to array?", o:["push()","pop()","shift()","unshift()"], a:0 },
+  { q:"Click handler in jQuery?", o:["onClick()","click()","press()","hover()"], a:1 },
+  { q:"HTML link tag?", o:["&lt;a&gt;","&lt;link&gt;","&lt;href&gt;","&lt;url&gt;"], a:0 },
+  { q:"CSS text color?", o:["font","bg","color","align"], a:2 }
 ];
 
-let index = 0;
+let index=0, score=0, time=600;
 let answers = Array(quiz.length).fill(null);
-let review = Array(quiz.length).fill(false);
-let score = 0;
-let time = 600;
 
-/* INIT PALETTE */
+/* INIT */
 quiz.forEach((_,i)=>{
   $("#paletteBox").append(`<div class="p-box not-answered" data-i="${i}">${i+1}</div>`);
 });
 
-/* LOAD QUESTION */
-function loadQuestion() {
+function loadQuestion(){
   $(".question").text(`Q${index+1}. ${quiz[index].q}`);
   $(".options").empty();
 
   quiz[index].o.forEach((opt,i)=>{
-    let cls = answers[index] === i ? "option selected" : "option";
-    $(".options").append(`<div class="${cls}" data-i="${i}">${opt}</div>`);
+    $(".options").append(`<div class="option ${answers[index]===i?'selected':''}" data-i="${i}">${opt}</div>`);
   });
 
-  $(".progress-bar").css("width", ((index)/quiz.length)*100 + "%");
+  $(".progress-bar").css("width",(index/quiz.length)*100+"%");
+  $("#previousBtn").prop("disabled", index===0);
+  $("#nextBtn").text(index===quiz.length-1?"Submit":"Next");
 }
 
-/* OPTION SELECT */
 $(document).on("click",".option",function(){
   $(".option").removeClass("selected");
   $(this).addClass("selected");
-  answers[index] = Number($(this).data("i"));
-
-  $(`.p-box[data-i=${index}]`)
-    .removeClass("not-answered review")
-    .addClass("answered");
+  answers[index]=Number($(this).data("i"));
+  $(`.p-box[data-i=${index}]`).removeClass("not-answered").addClass("answered");
 });
 
-/* MARK FOR REVIEW */
-$("#reviewBtn").click(function(){
-  review[index] = true;
-  $(`.p-box[data-i=${index}]`)
-    .removeClass("not-answered answered")
-    .addClass("review");
-});
+$("#previousBtn").click(()=>{ if(index>0){index--; loadQuestion();}});
+$("#reviewBtn").click(()=>{$(`.p-box[data-i=${index}]`).removeClass("answered").addClass("review");});
+$("#nextBtn").click(()=>{ index<quiz.length-1?index++&&loadQuestion():finishQuiz();});
+$(document).on("click",".p-box",e=>{index=$(e.target).data("i"); loadQuestion();});
 
-/* NEXT */
-$("#nextBtn").click(function(){
-  index++;
-  if(index < quiz.length) loadQuestion();
-  else finishQuiz();
-});
-
-/* PALETTE CLICK */
-$(document).on("click",".p-box",function(){
-  index = Number($(this).data("i"));
-  loadQuestion();
-});
-
-/* TIMER */
 setInterval(()=>{
   time--;
-  let m = Math.floor(time/60);
-  let s = time%60;
+  let m=Math.floor(time/60), s=time%60;
   $("#time").text(`${m}:${s<10?'0':''}${s}`);
-  if(time<=0) finishQuiz();
 },1000);
 
-/* FINISH */
-function finishQuiz(){
-  score = 0;
-  answers.forEach((a,i)=>{
-    if(a === quiz[i].a) score++;
-  });
+function finishQuiz() {
+  score = answers.filter((a, i) => a === quiz[i].a).length;
+
+  let resultText = "";
+  let iconClass = "";
+  let image = "";
+
+  if (score >= 8) {
+    resultText = "Excellent!";
+    iconClass = "bi-emoji-laughing-fill";
+    image = "excellent.png";
+  } else if (score >= 4) {
+    resultText = "Good Job!";
+    iconClass = "bi-emoji-smile-fill";
+    image = "good.png";
+  } else {
+    resultText = "Average – Try Again!";
+    iconClass = "bi-emoji-neutral-fill";
+    image = "average.webp";
+  }
 
   $(".quiz-box").html(`
-    <h2>Quiz Completed</h2>
-    <h3>Score: ${score}/${quiz.length}</h3>
-    <button id="reviewResult">Review Answers</button>
-    <div id="reviewSection"></div>
+    <div class="text-center">
+      <h2><i class="bi ${iconClass}"></i> ${resultText}</h2>
+      <h3>Score: ${score}/${quiz.length}</h3>
+      <img src="${image}" width="150" style="margin:15px 0;"><br>
+
+      <button id="reviewResult">Review Answers</button>
+      <button id="retryBtn">Try Again</button>
+
+      <div id="reviewSection"></div>
+    </div>
   `);
 }
 
-$(document).on("click", "#reviewResult", function () {
-  let html = "<h3>Review</h3>";
-
-  quiz.forEach((q, i) => {
-    html += `
-      <div class="review-question" data-i="${i}">
-        <strong>Q${i+1}. ${q.q}</strong><br>
-    `;
-
-    q.o.forEach((opt, idx) => {
-      let style = "";
-
-      if (idx === q.a) style = "color: green; font-weight:bold;";
-      if (answers[i] === idx && answers[i] !== q.a) style = "color: red;";
-
-      html += `<div style="${style}">${opt}</div>`;
-    });
-
-    html += "</div><hr>";
-  });
-
-  $("#reviewSection").html(html);
-});
-
-$(document).on("click", ".review-question", function () {
-  index = Number($(this).data("i"));
-  $(".quiz-box").html(`
-    <div class="timer">Time Left: <span id="time">--</span></div>
-    <div class="progress"><div class="progress-bar"></div></div>
-    <div class="question"></div>
-    <div class="options"></div>
-    <div class="controls">
-      <button id="reviewBtn">Mark for Review</button>
-      <button id="nextBtn">Next</button>
-    </div>
-  `);
+$("#startTest").click(()=>{
+  if(!$("#username").val()) return alert("Enter name");
+  $("#loginPage").hide();
+  $("#quizPage").show();
   loadQuestion();
 });
-
-
-/* START */
-loadQuestion();
 </script>
 
 </body>
