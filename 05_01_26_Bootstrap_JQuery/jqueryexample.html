@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Show Data</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    #info {
+      display: none;   /* hidden initially */
+      margin-top: 15px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      width: 300px;
+      background-color: #f9f9f9;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <button id="showBtn">Show My Details</button>
+
+  <div id="info">
+    <h4>Vaibhav Pawar</h4>
+    <p>
+      Frontend Trainee<br>
+      HTML • CSS • JavaScript
+    </p>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("#showBtn").click(function () {
+        $("#info").show();
+      });
+    });
+  </script>
+
+</body>
+</html>

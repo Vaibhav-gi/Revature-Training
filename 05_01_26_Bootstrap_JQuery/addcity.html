@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Add & Remove City</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    input {
+      padding: 6px;
+    }
+
+    button {
+      padding: 6px 12px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>City List (jQuery)</h3>
+
+  <input type="text" id="cityInput" placeholder="Enter city name">
+  <button id="addCity">Add City</button>
+  <button id="removeCity">Remove Last City</button>
+
+  <ul id="cityList"></ul>
+
+  <script>
+    $(document).ready(function () {
+
+      // ADD city
+      $("#addCity").click(function () {
+        const city = $("#cityInput").val();
+
+        if (city === "") {
+          alert("Please enter city name");
+          return;
+        }
+
+        $("#cityList").append("<li>" + city + "</li>");
+        $("#cityInput").val("");
+      });
+
+      // REMOVE city
+      $("#removeCity").click(function () {
+        $("#cityList li:last").remove();
+      });
+
+    });
+  </script>
+
+</body>
+</html>
