@@ -1,0 +1,43 @@
+ tables for practices 
+employees(employee_id, first_name, last_name, job_id, manager_id,
+          department_id, salary, hire_date)
+
+departments(department_id, department_name, location_id)
+jobs(job_id, job_title, min_salary, max_salary)
+locations(location_id, city, country_id)
+countries(country_id, country_name, region_id)
+regions(region_id, region_name)
+job_history(employee_id, job_id, department_id, start_date, end_date)
+
+15 Advanced JOIN Practice Questions
+
+Display all employees along with their department name and city.
+Include employees even if they are not assigned to any department.
+
+Find departments that do not have any employees.
+
+List employees who have never changed jobs (not present in job_history).
+
+Show each employee with the total number of jobs they have held (current + past).
+
+Display employees who earn more than the average salary of their department.
+
+Find the highest paid employee in each department along with the department name.
+
+List employees who work in the same department as their manager.
+
+Display employees who earn more than their manager.
+
+Show departments where the total salary expense is greater than 300,000.
+
+List employees who have worked in more than one department.
+
+Display departments where no employee has ever changed jobs.
+
+Find managers who manage more than 5 employees.
+
+Show employees who are working in a department but their job title does not match any job in job_history.
+
+List employees who have worked in every department that belongs to their region.
+
+Display departments where every employee earns more than the minimum salary of their job role.
