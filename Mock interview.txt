@@ -1,0 +1,432 @@
+Linux & Shell Scripting
+
+Q1. What is Linux?
+A: Linux is an open-source, Unix-like operating system used widely for servers, cloud, and development environments.
+
+Q2. What are some basic Linux commands?
+A:
+
+ls – list files
+
+cd – change directory
+
+pwd – current directory
+
+cp – copy files
+
+mv – move/rename files
+
+rm – remove files
+
+chmod – change permissions
+
+Q3. What is shell scripting?
+A: Writing scripts using shell commands to automate tasks in Linux.
+
+Q4. What is the difference between sh and bash?
+A: bash is an advanced version of sh with features like arrays, command history, and tab completion.
+
+ Git & Version Control
+
+Q5. What is Version Control System (VCS)?
+A: A system that tracks changes in source code over time.
+
+Q6. Difference between CVCS and DVCS?
+A:
+
+CVCS: Central repository (e.g., SVN)
+
+DVCS: Each developer has a full copy (e.g., Git)
+
+Q7. What is Git?
+A: Git is a distributed version control system for tracking code changes.
+
+Q8. What are basic Git commands?
+A:
+
+git init
+
+git clone
+
+git status
+
+git add
+
+git commit
+
+git push
+
+git pull
+
+Q9. What is branching in Git?
+A: Branching allows parallel development without affecting the main branch.
+
+Q10. What is a Pull Request?
+A: A request to merge code from one branch to another, usually after review.
+
+Q11. What is .gitignore?
+A: A file that specifies files/folders Git should ignore.
+
+ HTTP & Web Basics
+
+Q12. What is HTTP?
+A: HyperText Transfer Protocol used for client-server communication on the web.
+
+Q13. Common HTTP methods?
+A:
+
+GET
+
+POST
+
+PUT
+
+DELETE
+
+PATCH
+
+Q14. Difference between GET and POST?
+A:
+
+GET: Data in URL, less secure
+
+POST: Data in request body, more secure
+
+Q15. What are HTTP status codes?
+A:
+
+200 – OK
+
+201 – Created
+
+400 – Bad Request
+
+401 – Unauthorized
+
+404 – Not Found
+
+500 – Server Error
+
+Q16. What are HTTP cookies?
+A: Small data stored on the client to maintain session state.
+
+ HTML & HTML5
+
+Q17. What is HTML?
+A: HyperText Markup Language used to structure web pages.
+
+Q18. Difference between inline and block elements?
+A:
+
+Inline: <span>, <a>
+
+Block: <div>, <p>, <section>
+
+Q19. What is DOM?
+A: Document Object Model – a tree structure representing HTML elements.
+
+Q20. What are HTML5 features?
+A:
+
+Semantic tags
+
+Local storage
+
+Geolocation
+
+Audio & Video
+
+Form validation
+
+Q21. What is form validation?
+A: Ensuring correct user input using attributes like required, pattern.
+
+ CSS & Responsive Design
+
+Q22. What is CSS?
+A: Cascading Style Sheets used to style HTML elements.
+
+Q23. What is the CSS box model?
+A: Content → Padding → Border → Margin
+
+Q24. Difference between Flexbox and Grid?
+A:
+
+Flexbox: 1D layout
+
+Grid: 2D layout
+
+Q25. What are media queries?
+A: Used to create responsive designs for different screen sizes.
+
+Q26. What is responsive web design?
+A: Designing websites that adapt to all screen sizes.
+
+ JavaScript Fundamentals
+
+Q27. Difference between var, let, and const?
+A:
+
+var: function-scoped
+
+let: block-scoped
+
+const: cannot be reassigned
+
+Q28. What are JavaScript data types?
+A:
+
+Primitive: string, number, boolean, null, undefined
+
+Non-primitive: object, array
+
+Q29. What are array methods like map and filter?
+A:
+
+map() – transforms array
+
+filter() – filters elements
+
+reduce() – reduces to single value
+
+Q30. What is closure?
+A: A function that remembers variables from its outer scope.
+
+ Asynchronous JavaScript
+
+Q31. Difference between synchronous and asynchronous?
+A:
+
+Sync: blocks execution
+
+Async: non-blocking
+
+Q32. What is the event loop?
+A: Manages execution of asynchronous code.
+
+Q33. What is callback hell?
+A: Nested callbacks making code hard to read.
+
+Q34. What are Promises?
+A: Objects representing eventual completion or failure of async operations.
+
+Q35. What is async/await?
+A: Cleaner syntax for handling promises.
+
+ JSON & Fetch API
+
+Q36. What is JSON?
+A: Lightweight data interchange format.
+
+Q37. Difference between JSON.parse() and JSON.stringify()?
+A:
+
+parse() → JSON to JS object
+
+stringify() → JS object to JSON
+
+Q38. What is Fetch API?
+A: Used to make HTTP requests from JavaScript.
+
+ Bootstrap & jQuery
+
+Q39. What is Bootstrap?
+A: A CSS framework for responsive design.
+
+Q40. What is Bootstrap Grid System?
+A: 12-column layout using rows and columns.
+
+Q41. What is jQuery?
+A: A JavaScript library simplifying DOM manipulation and AJAX.
+
+Q42. What is AJAX?
+A: Asynchronous JavaScript and XML used to load data without refreshing page.
+
+ Agile & Scrum
+
+Q43. What is Agile methodology?
+A: Iterative development approach focusing on collaboration and flexibility.
+
+Q44. Scrum roles?
+A:
+
+Product Owner
+
+Scrum Master
+
+Development Team
+
+Q45. What is a user story?
+A: A requirement written from user’s perspective.
+
+
+MOCK INTERVIEW 
+
+ ROUND 1: Basic Screening
+
+Q1. Tell me about yourself.
+ Expected: Education, tech stack (HTML, CSS, JS, Git), projects, eagerness to learn.
+
+Q2. What technologies are you comfortable with?
+ Expected: Linux basics, Git, HTML5, CSS3, JavaScript, Bootstrap, jQuery, Agile.
+
+Q3. What is your understanding of Full Stack Development?
+ Expected: Frontend + Backend + Database + Version control + Deployment.
+
+ ROUND 2: Linux & Git
+
+Q4. How do you check current directory in Linux?
+ Answer: pwd
+
+Q5. Command to list hidden files?
+ Answer: ls -a
+
+Q6. What is Git and why do we use it?
+ Expected: Version control, collaboration, rollback, branching.
+
+Q7. Difference between git pull and git fetch?
+ Answer:
+
+git fetch: downloads changes
+
+git pull: fetch + merge
+
+Q8. Explain Git branching with an example.
+ Expected: Feature branch → develop → main
+
+Q9. What happens if there is a merge conflict?
+ Expected: Git asks developer to resolve conflicting code manually.
+
+ ROUND 3: HTTP & Web Concepts
+
+Q10. What happens when you type a URL in the browser?
+ Expected: DNS lookup → HTTP request → server response → browser rendering.
+
+Q11. Difference between HTTP and HTTPS?
+ Answer: HTTPS is secure using SSL/TLS encryption.
+
+Q12. Which HTTP method is used to submit form data securely?
+ Answer: POST
+
+Q13. What is the use of HTTP status codes?
+ Expected: Indicates request result (success, error, redirection).
+
+ ROUND 4: HTML & CSS
+
+Q14. What is semantic HTML?
+ Expected: Meaningful tags like <header>, <article>, <footer>.
+
+Q15. Difference between <div> and <span>?
+ Answer:
+
+<div>: block element
+
+<span>: inline element
+
+Q16. Explain CSS box model.
+ Answer: Content → Padding → Border → Margin
+
+Q17. Difference between display: none and visibility: hidden?
+ Answer:
+
+display: none: removes element
+
+visibility: hidden: hides but keeps space
+
+Q18. How do media queries help in responsive design?
+ Expected: Apply CSS based on screen size.
+
+ ROUND 5: JavaScript Fundamentals
+
+Q19. Difference between let, var, and const?
+ Expected: Scope & reassignment differences.
+
+Q20. What are JavaScript data types?
+ Expected: Primitive & non-primitive.
+
+Q21. Explain map() vs forEach()
+ Answer:
+
+map() returns new array
+
+forEach() does not
+
+Q22. What is hoisting?
+ Expected: JS moves declarations to top of scope.
+
+ ROUND 6: Advanced JavaScript
+
+Q23. What is a closure?
+ Expected: Function remembers outer variables.
+
+Q24. Explain synchronous vs asynchronous code.
+ Expected: Blocking vs non-blocking.
+
+Q25. What is the event loop?
+ Expected: Manages async operations.
+
+Q26. What problem does Promise solve?
+ Expected: Callback hell.
+
+Q27. Difference between Promise and async/await?
+ Expected: async/await is cleaner syntax.
+
+ ROUND 7: DOM, Fetch, jQuery
+
+Q28. How do you select an element in JavaScript?
+ Answer: document.querySelector()
+
+Q29. What is DOM manipulation?
+ Expected: Changing HTML dynamically using JS.
+
+Q30. What is Fetch API used for?
+ Expected: Making HTTP requests.
+
+Q31. What is AJAX?
+ Expected: Load data without page refresh.
+
+ ROUND 8: Bootstrap
+
+Q32. What is Bootstrap Grid System?
+ Expected: 12-column layout.
+
+Q33. Difference between container and container-fluid?
+ Answer:
+
+container: fixed width
+
+container-fluid: full width
+
+Q34. Name some Bootstrap components.
+ Expected: Navbar, Modal, Card, Button.
+
+ ROUND 9: Agile & Scrum
+
+Q35. What is Agile methodology?
+ Expected: Iterative, flexible development.
+
+Q36. What are Scrum ceremonies?
+ Answer:
+
+Sprint Planning
+
+Daily Stand-up
+
+Sprint Review
+
+Retrospective
+
+Q37. What is a user story format?
+ Answer:
+“As a user, I want feature, so that benefit.”
+
+ ROUND 10: Scenario-Based Questions 
+
+Q38. Your code works locally but not in production. What will you do?
+ Expected: Check logs, environment variables, configs.
+
+Q39. How do you debug JavaScript issues?
+ Expected: Console logs, breakpoints, DevTools.
+
+Q40. If given a new technology, how will you learn it?
+ Expected: Docs → tutorials → practice → project.
