@@ -8,6 +8,6 @@ public class areaOfCircle {
         System.out.println("Enter the radius of circle: ");
         int r = sc.nextInt();
         double pi = 3.14;
-        System.out.println("The area of circle "+ 2*pi*r);
+        System.out.println("The area of circle "+ pi*r*r);
     }
 }
