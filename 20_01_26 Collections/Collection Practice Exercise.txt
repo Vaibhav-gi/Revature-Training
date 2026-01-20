@@ -1,0 +1,201 @@
+1. Student Attendance Tracking (List + HashSet)
+
+Scenario:
+A training institute conducts daily classes. Each day, student roll numbers are recorded.
+
+Problem Statement:
+
+Store daily attendance in a List.
+
+Remove duplicate entries using a HashSet.
+
+Display:
+
+Total students present
+
+Duplicate entries detected
+
+Final unique attendance list
+
+Concepts Used: List, HashSet, iteration
+
+2. Online Shopping Cart System (ArrayList)
+
+Scenario:
+An e-commerce application maintains a shopping cart for users.
+
+Problem Statement:
+
+Use an ArrayList to store product names.
+
+Implement operations:
+
+Add product
+
+Remove product
+
+Update product quantity
+
+Display cart items
+
+Show cart size dynamically.
+
+Concepts Used: ArrayList operations
+
+3. Employee Directory Management (HashMap)
+
+Scenario:
+A company maintains employee details using employee ID.
+
+Problem Statement:
+
+Use a HashMap<EmployeeID, EmployeeName>
+
+Implement:
+
+Add employee
+
+Search employee by ID
+
+Update employee name
+
+Delete employee
+
+Display all employees
+
+Concepts Used: HashMap CRUD operations
+
+4. Duplicate Email Detection System (HashSet)
+
+Scenario:
+A website collects user email IDs during registration.
+
+Problem Statement:
+
+Store incoming emails in a HashSet
+
+Detect and reject duplicate email registrations
+
+Display list of unique registered emails
+
+Concepts Used: HashSet uniqueness property
+
+5. Word Frequency Counter (ArrayList + HashMap)
+
+Scenario:
+A content management system analyzes blog articles.
+
+Problem Statement:
+
+Store words from an article in a List
+
+Use a HashMap<String, Integer> to count frequency of each word
+
+Display:
+
+Most frequent word
+
+Words appearing more than once
+
+Concepts Used: List iteration, HashMap counting
+
+6. Course Enrollment System (HashMap + ArrayList)
+
+Scenario:
+An online learning platform manages courses and enrolled students.
+
+Problem Statement:
+
+Use HashMap<CourseName, List<StudentName>>
+
+Implement:
+
+Enroll student in course
+
+Remove student
+
+Display students per course
+
+Count students per course
+
+Concepts Used: Nested collections
+
+7. Inventory Stock Management (Array + HashMap)
+
+Scenario:
+A retail store tracks product stock.
+
+Problem Statement:
+
+Use an Array to store product IDs
+
+Use HashMap<ProductID, Quantity>
+
+Implement:
+
+Stock update after sales
+
+Check low-stock products
+
+Display total inventory count
+
+Concepts Used: Array indexing, HashMap mapping
+
+8. Unique Visitor Counter (HashSet)
+
+Scenario:
+A website wants to track unique daily visitors.
+
+Problem Statement:
+
+Store visitor IP addresses in a HashSet
+
+Display:
+
+Total visits
+
+Unique visitors
+
+Repeat visitors count
+
+Concepts Used: HashSet, size comparison
+
+9. Library Book Management System (ArrayList + HashMap)
+
+Scenario:
+A library tracks books and issued status.
+
+Problem Statement:
+
+Use ArrayList to store available books
+
+Use HashMap<BookID, IssuedTo>
+
+Implement:
+
+Issue book
+
+Return book
+
+Display available and issued books
+
+Concepts Used: List + Map coordination
+
+10. Customer Purchase History (HashMap + HashSet)
+
+Scenario:
+A retail company tracks customer purchases.
+
+Problem Statement:
+
+Use HashMap<CustomerID, HashSet<ProductID>>
+
+Ensure no duplicate products per customer
+
+Display:
+
+Products bought by each customer
+
+Total unique products purchased
+
+Concepts Used: HashMap with HashSet values

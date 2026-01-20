@@ -1,0 +1,240 @@
+EASY LEVEL 
+1 ArrayList Query Problem
+
+Problem
+Create an ArrayList<Integer> and perform the following:
+
+Add N elements
+
+Answer Q queries of two types:
+
+GET index
+
+REMOVE index
+
+Input Example
+
+5
+10 20 30 40 50
+3
+GET 2
+REMOVE 3
+GET 3
+
+
+Output
+
+30
+50
+
+2 Unique Words Counter (Set)
+
+Problem
+Given N strings, print the number of unique words.
+
+Input
+
+6
+apple
+banana
+apple
+orange
+banana
+grapes
+
+
+Output
+
+4
+
+
+ Use: HashSet
+
+3 Phone Book (Map)
+
+Problem
+Store names and phone numbers. For each query:
+
+Print name=number if found
+
+Else print Not found
+
+Input
+
+3
+sam 99912222
+tom 11122222
+harry 12299933
+sam
+edward
+harry
+
+
+Output
+
+sam=99912222
+Not found
+harry=12299933
+
+
+ Use: HashMap
+
+ MEDIUM LEVEL
+4 Frequency Counter
+
+Problem
+Given an array of integers, print each number with its frequency.
+
+Input
+
+8
+1 2 2 3 1 4 2 1
+
+
+Output
+
+1 3
+2 3
+3 1
+4 1
+
+
+ Use: HashMap<Integer, Integer>
+
+5 Balanced Brackets
+
+Problem
+Check if brackets are balanced.
+
+Input
+
+{[()]}
+
+
+Output
+
+Balanced
+
+
+Input
+
+{[(])}
+
+
+Output
+
+Not Balanced
+
+
+ Use: Stack<Character>
+
+6 Student Sorter
+
+Problem
+Sort students by:
+
+Highest marks
+
+Name (alphabetically)
+
+Roll number
+
+Input
+
+4
+101 Manish 90
+102 Amit 95
+103 Disha 90
+104 Aman 95
+
+
+Output
+
+Aman
+Amit
+Manis
+Ravi
+
+
+ Use: ArrayList + Comparator
+
+ ADVANCED LEVEL (HackerRank Style)
+7 Queue Using Two Stacks
+
+Problem
+Implement a queue using two stacks and support:
+
+1 x → Enqueue
+
+2 → Dequeue
+
+3 → Print front
+
+Input
+
+5
+1 10
+1 20
+3
+2
+3
+
+
+Output
+
+10
+20
+
+8 Top K Frequent Elements
+
+Problem
+Print the top K most frequent numbers.
+
+Input
+
+6
+1 1 1 2 2 3
+2
+
+
+Output
+
+1 2
+
+
+ Use: HashMap + PriorityQueue
+
+9 Longest Consecutive Sequence
+
+Problem
+Find the longest sequence of consecutive numbers.
+
+Input
+
+6
+100 4 200 1 3 2
+
+
+Output
+
+4
+
+
+(Sequence: 1,2,3,4)
+
+ Use: HashSet
+
+ BONUS CHALLENGE
+10  LRU Cache Simulation
+
+Problem
+Implement an LRU Cache with:
+
+PUT key value
+
+GET key
+
+Capacity is fixed.
+
+ Use: LinkedHashMap
+
