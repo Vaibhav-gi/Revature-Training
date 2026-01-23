@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="14_01_26 OOPs/OOPs/src"/>
+	<classpathentry kind="src" path="16_01_26 Array/Array/src"/>
+	<classpathentry kind="src" path="19_01_26/src"/>
+	<classpathentry kind="src" path="20_01_26 Collections/src"/>
+	<classpathentry kind="src" path="21_01_26 ArrayList/src"/>
+	<classpathentry kind="src" path="Java/Java/src"/>
+	<classpathentry kind="src" path="RevPlay/src"/>
+	<classpathentry kind="output" path="16_01_26 Array/Array/out/production/Array"/>
+</classpath>
