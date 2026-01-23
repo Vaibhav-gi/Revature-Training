@@ -19,6 +19,7 @@ public class StringThreadDemo extends Thread {
     public static void main(String[] args) {
 
         StringThreadDemo t1 = new StringThreadDemo();
-        t1.start(); // start thread
+        t1.start();
+        // start thread
     }
 }
