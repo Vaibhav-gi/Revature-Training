@@ -1,0 +1,78 @@
+BASIC STREAM EXERCISES
+ Filter Even Numbers
+
+Given a list of integers, return only the even numbers.
+
+Input: [1, 2, 3, 4, 5, 6]
+Output: [2, 4, 6]
+
+ Convert Strings to Uppercase
+
+Convert all strings in a list to uppercase.
+
+Input: ["java", "stream", "api"]
+Output: ["JAVA", "STREAM", "API"]
+
+ Count Elements Greater Than 10
+
+Count how many numbers are greater than 10.
+
+Input: [5, 10, 15, 20, 3]
+Output: 2
+
+ Sum of All Numbers
+
+Calculate the sum of all integers in a list.
+
+ Find First Element
+
+Find the first element in a list of strings.
+
+ INTERMEDIATE STREAM EXERCISES
+ Remove Duplicates
+
+Remove duplicate elements from a list.
+
+Input: [1, 2, 2, 3, 3, 4]
+Output: [1, 2, 3, 4]
+
+Sort Strings by Length
+
+Sort a list of strings by their length.
+
+Find Maximum Number
+
+Find the maximum number in a list using streams.
+
+Square and Filter
+
+Square each number and keep only those greater than 20.
+
+Input: [2, 3, 4, 5]
+Output: [25]
+
+ Group Strings by Length
+
+Group strings based on their length.
+
+Input: ["one", "two", "three", "four"]
+Output:
+
+{
+  3=[one, two],
+  4=[four],
+  5=[three]
+}
+
+ (INTERMEDIATE+)
+ Find Second Highest Number
+
+Find the second largest number in a list.
+
+ Join Strings with Comma
+
+Join a list of strings into a single comma-separated string.
+
+ Partition Even and Odd Numbers
+
+Partition numbers into even and odd.
