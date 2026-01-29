@@ -1,0 +1,312 @@
+OOPS – Interview Questions & Examples (Java)
+1  Introduction to OOP
+Q1 (Basic): What is OOP?
+
+Answer:
+OOP (Object-Oriented Programming) is a programming paradigm based on objects that contain data (fields) and behavior (methods).
+
+Core principles:
+
+Encapsulation
+
+Inheritance
+
+Polymorphism
+
+Abstraction
+
+Q2 (Intermediate): Why is OOP preferred over procedural programming?
+
+Answer:
+
+Better code reusability
+
+Easier maintenance
+
+Supports real-world modeling
+
+Improves security and scalability
+
+2 Classes vs Objects
+Q3 (Basic): What is a class?
+
+Answer:
+A class is a blueprint or template for creating objects.
+
+class Car {
+    String brand;
+    void drive() {
+        System.out.println("Car is driving");
+    }
+}
+
+Q4 (Basic): What is an object?
+
+Answer:
+An object is an instance of a class.
+
+Car c = new Car();
+c.brand = "BMW";
+c.drive();
+
+Q5 (Intermediate): Can we create multiple objects from one class?
+
+Answer:
+Yes. Each object has its own state but shares the same behavior.
+
+3 Class Members
+Q6 (Basic): What are class members?
+
+Answer:
+
+Fields (variables)
+
+Methods
+
+Constructors
+
+Inner classes
+
+Q7 (Intermediate): Difference between instance and class members?
+
+Answer:
+
+Instance members → belong to objects
+
+Class members → belong to class (static)
+
+4 Static Members
+Q8 (Basic): What is static keyword?
+
+Answer:
+static members belong to the class, not to objects.
+
+class Counter {
+    static int count = 0;
+}
+
+Q9 (Intermediate): Why is main() static?
+
+Answer:
+Because JVM calls main() without creating an object.
+
+5 Inheritance
+Q10 (Basic): What is inheritance?
+
+Answer:
+Inheritance allows one class to acquire properties of another class.
+
+class Animal {
+    void eat() {
+        System.out.println("Eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking");
+    }
+}
+
+Q11 (Intermediate): Why Java does not support multiple inheritance with classes?
+
+Answer:
+To avoid Diamond Problem ambiguity.
+
+6  Interfaces & Abstract Classes
+Q12 (Basic): What is an interface?
+
+Answer:
+An interface contains abstract methods and supports multiple inheritance.
+
+interface Payment {
+    void pay();
+}
+
+Q13 (Basic): What is an abstract class?
+
+Answer:
+A class that cannot be instantiated and may contain abstract methods.
+
+abstract class Shape {
+    abstract void draw();
+}
+
+Q14 (Intermediate): Interface vs Abstract Class
+Feature				Interface		Abstract Class
+Multiple inheritance	 	Yes			 No
+Constructors	 			No	 		        	Yes
+
+Variables	public static final	Any
+7 Polymorphism
+Q15 (Basic): What is polymorphism?
+
+Answer:
+One method behaves differently in different situations.
+
+Q16 (Intermediate): Types of polymorphism in Java
+
+Answer:
+
+Compile-time → Method Overloading
+
+Runtime → Method Overriding
+
+8 Method Overloading
+Q17 (Basic): What is method overloading?
+
+Answer:
+Same method name with different parameters.
+
+class MathUtil {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+Q18 (Intermediate): Can we overload main() method?
+
+Answer:
+Yes, but JVM calls only public static void main(String[] args).
+
+9  Method Overriding
+Q19 (Basic): What is method overriding?
+
+Answer:
+Subclass provides its own implementation of a parent method.
+
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+Q20 (Intermediate): Rules for overriding
+
+Answer:
+
+Same method signature
+
+Cannot reduce access level
+
+final methods cannot be overridden
+10 Encapsulation
+Q21 (Basic): What is encapsulation?
+
+Answer:
+Wrapping data and methods into a single unit and hiding data using access modifiers.
+
+class Employee {
+    private int salary;
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+}
+
+Q22 (Intermediate): Benefits of encapsulation
+
+Answer:
+
+Data security
+
+Controlled access
+
+Maintainability
+
+11 Abstraction
+Q23 (Basic): What is abstraction?
+
+Answer:
+Hiding implementation details and showing only essential features.
+
+Q24 (Intermediate): How is abstraction achieved in Java?
+
+Answer:
+
+Abstract classes
+
+Interfaces
+
+12 Object Class
+Q25 (Basic): What is Object class?
+
+Answer:
+Object is the parent class of all Java classes.
+
+Common methods:
+
+toString()
+
+equals()
+
+hashCode()
+
+clone()
+
+13 Non-Access Modifiers
+Q26 (Basic): What are non-access modifiers?
+
+Answer:
+static, final, abstract, synchronized, volatile, transient
+
+Q27 (Intermediate): Difference between final, finally, finalize
+
+Answer:
+
+final → constant
+
+finally → block after try-catch
+
+finalize() → GC related (deprecated)
+
+ 14 Equality, equals & hashCode
+Q28 (Basic): Difference between == and equals()?
+
+Answer:
+
+== compares references
+
+equals() compares content
+
+Q29 (Intermediate): Why override hashCode() when equals() is overridden?
+
+Answer:
+To maintain HashMap & HashSet contract.
+
+@Override
+public boolean equals(Object o) { }
+
+@Override
+public int hashCode() { }
+
+15 Garbage Collection
+Q30 (Basic): What is Garbage Collection?
+
+Answer:
+Automatic process of removing unused objects from memory.
+
+Q31 (Intermediate): Can we force GC?
+
+Answer:
+No. System.gc() is only a request, not a guarantee.
+
+
+If asked “Explain OOPS with real-world example”, use:
+
+“A car is an object, blueprint is class, speed is encapsulated, engine implementation is abstracted.

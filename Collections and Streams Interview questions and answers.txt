@@ -1,0 +1,392 @@
+EXCEPTIONS
+ Exceptions – Basics
+Q1 (Beginner): What is an exception?
+
+Answer:
+An exception is an abnormal condition that occurs during program execution and disrupts normal flow.
+
+Example:
+
+int a = 10 / 0; // ArithmeticException
+
+Q2 (Beginner): Difference between Exception and Error?
+
+Answer:
+
+Exception	Error
+Recoverable	Not recoverable
+Occurs due to program logic	Occurs due to JVM/system
+Example: IOException	Example: OutOfMemoryError
+Q3 (Intermediate): Explain Exception hierarchy
+
+Answer:
+
+Throwable
+ ├── Error
+ └── Exception
+      ├── Checked Exceptions
+      └── RuntimeException
+
+ Checked vs Unchecked Exceptions
+Q4 (Beginner): What are checked exceptions?
+
+Answer:
+Checked at compile time, must be handled.
+
+Example:
+
+FileReader fr = new FileReader("a.txt"); // IOException
+
+Q5 (Beginner): What are unchecked exceptions?
+
+Answer:
+Checked at runtime, not mandatory to handle.
+
+Example:
+
+int x = 10 / 0; // ArithmeticException
+
+ Exception Handling
+Q6 (Beginner): How do you handle exceptions?
+
+Answer:
+Using try-catch-finally.
+
+try {
+    int a = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+} finally {
+    System.out.println("Always executed");
+}
+
+Q7 (Intermediate): Can we have multiple catch blocks?
+
+Answer:
+Yes, from child to parent order.
+
+ Custom Exceptions
+Q8 (Beginner): How to create custom exception?
+
+Answer:
+
+class InvalidAgeException extends Exception {
+    InvalidAgeException(String msg) {
+        super(msg);
+    }
+}
+
+
+Usage:
+
+if(age < 18) {
+    throw new InvalidAgeException("Not eligible");
+}
+
+ Reading Stack Trace
+Q9 (Intermediate): What is stack trace?
+
+Answer:
+It shows method call sequence where exception occurred.
+
+e.printStackTrace();
+
+ COLLECTIONS FRAMEWORK
+ Collections Overview
+Q10 (Beginner): What is Collection Framework?
+
+Answer:
+A unified architecture to store, retrieve and manipulate objects.
+
+Q11 (Intermediate): Collections vs Collection?
+
+Answer:
+
+Collection → Interface
+
+Collections → Utility class
+
+ List Interface
+Q12 (Beginner): What is List?
+
+Answer:
+Ordered, allows duplicates.
+
+Implementations:
+
+ArrayList
+
+LinkedList
+
+Vector
+
+List<String> list = new ArrayList<>();
+list.add("Java");
+
+Q13 (Intermediate): ArrayList vs LinkedList?
+
+Answer:
+
+ArrayList	           LinkedList
+Fast access	Fast insertion
+Uses array	           Uses nodes
+
+ Set Interface
+Q14 (Beginner): What is Set?
+
+Answer:
+Does not allow duplicates.
+
+Implementations:
+
+HashSet
+
+LinkedHashSet
+
+TreeSet
+
+Set<Integer> set = new HashSet<>();
+
+Q15 (Intermediate): HashSet vs TreeSet?
+
+Answer:
+
+HashSet → No order
+
+TreeSet → Sorted order
+
+ Queue Interface
+Q16 (Beginner): What is Queue?
+
+Answer:
+FIFO structure.
+
+Implementations:
+
+PriorityQueue
+
+ArrayDeque
+
+Queue<Integer> q = new PriorityQueue<>();
+
+Map Interface
+Q17 (Beginner): What is Map?
+
+Answer:
+Stores key-value pairs, keys are unique.
+
+Map<Integer, String> map = new HashMap<>();
+
+Q18 (Intermediate): HashMap vs ConcurrentHashMap?
+
+Answer:
+ConcurrentHashMap is thread-safe and faster in multithreading.
+
+Iterators
+Q19 (Beginner): What is Iterator?
+
+Answer:
+Used to traverse collection elements.
+
+Iterator<Integer> it = list.iterator();
+
+MULTITHREADING
+Thread & Runnable
+Q20 (Beginner): How to create a thread?
+
+Answer:
+
+Extend Thread class
+
+Implement Runnable
+
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+
+Q21 (Intermediate): Thread vs Runnable?
+
+Answer:
+Runnable is preferred because it supports multiple inheritance.
+
+Thread States
+Q22 (Beginner): Thread lifecycle states?
+
+Answer:
+New → Runnable → Running → Waiting → Terminated
+
+Synchronization
+Q23 (Intermediate): What is synchronization?
+
+Answer:
+Controls access to shared resources.
+
+synchronized void print() { }
+
+Deadlock & Livelock
+Q24 (Intermediate): What is deadlock?
+
+Answer:
+Two threads waiting for each other forever.
+
+Q25 (Intermediate): Livelock?
+
+Answer:
+Threads are active but make no progress.
+
+Producer-Consumer Problem
+Q26 (Intermediate): Explain Producer Consumer
+
+Answer:
+One thread produces data, another consumes.
+
+Uses:
+
+wait()
+
+notify()
+
+ FUNCTIONAL PROGRAMMING
+Functional Interfaces
+Q27 (Beginner): What is functional interface?
+
+Answer:
+Interface with single abstract method.
+
+Example:
+
+@FunctionalInterface
+interface Test {
+    void show();
+}
+
+ Lambdas
+Q28 (Beginner): What is lambda expression?
+
+Answer:
+Anonymous function.
+
+Test t = () -> System.out.println("Hello");
+
+Method References
+Q29 (Intermediate): What is method reference?
+
+Answer:
+Short form of lambda.
+
+System.out::println
+
+Optional Class
+Q30 (Intermediate): Why Optional?
+
+Answer:
+To avoid NullPointerException.
+
+Optional<String> name = Optional.of("Java");
+
+FILE HANDLING & I/O
+Q31 (Beginner): How to read a file?
+Files.readAllLines(Path.of("a.txt"));
+
+Q32 (Intermediate): Difference between FileReader and BufferedReader?
+
+Answer:
+BufferedReader is faster due to buffering.
+
+STREAM API
+Stream Basics
+Q33 (Beginner): What is Stream API?
+
+Answer:
+Used for functional-style operations on collections.
+
+Q34 (Intermediate): Intermediate vs Terminal operations?
+
+Answer:
+
+Intermediate → map, filter
+
+Terminal → collect, forEach
+
+Q35 (Intermediate): What are parallel streams?
+
+Answer:
+Streams that run operations in parallel.
+
+Collectors
+list.stream().collect(Collectors.toList());
+
+DATE & TIME API
+Q36 (Beginner): Why new Date-Time API?
+
+Answer:
+Old Date API was mutable and not thread-safe.
+
+LocalDate.now();
+
+REFLECTION API
+Q37 (Intermediate): What is reflection?
+
+Answer:
+Access class metadata at runtime.
+
+Class.forName("com.Test");
+
+ DESIGN PATTERNS & SOLID
+SOLID Principles (Beginner)
+
+S → Single Responsibility
+
+O → Open/Closed
+
+L → Liskov Substitution
+
+I → Interface Segregation
+
+D → Dependency Inversion
+
+Singleton Pattern
+Q38 (Beginner): What is Singleton?
+
+Answer:
+Only one instance of class.
+
+class Singleton {
+    private static Singleton obj = new Singleton();
+    private Singleton(){}
+    public static Singleton getInstance() {
+        return obj;
+    }
+}
+
+Factory Pattern
+Q39 (Intermediate): What is Factory Pattern?
+
+Answer:
+Creates objects without exposing instantiation logic.
+
+Structural & Behavioral Patterns
+Q40 (Intermediate): Examples?
+
+Answer:
+
+Structural → Adapter, Decorator
+
+Behavioral → Observer, Strategy
+
+
+If interviewer asks:
+
+“Explain with real-time example”
+
+Use:
+
+Collection → Shopping cart
+
+Thread → ATM transactions
+
+Stream → Filtering data
+
+Singleton → Logger
