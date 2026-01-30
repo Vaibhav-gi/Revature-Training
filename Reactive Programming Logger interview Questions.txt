@@ -1,0 +1,335 @@
+Reactive Programming
+ Beginner Level
+Q1. What is Reactive Programming?
+
+Answer:
+Reactive Programming is an asynchronous, non-blocking programming paradigm that focuses on data streams and propagation of change.
+
+Example (Conceptual):
+
+Flux<Integer> numbers = Flux.just(1, 2, 3);
+numbers.subscribe(System.out::println);
+
+Q2. What is the Reactive Manifesto?
+
+Answer:
+The Reactive Manifesto defines four principles:
+
+Responsive
+
+Resilient
+
+Elastic
+
+Message-driven
+
+Q3. What are Reactive Streams?
+
+Answer:
+Reactive Streams is a standard specification for asynchronous stream processing with backpressure.
+
+Core Interfaces:
+
+Publisher
+
+Subscriber
+
+Subscription
+
+Processor
+
+ Intermediate Level
+Q4. What is backpressure?
+
+Answer:
+Backpressure allows a subscriber to control the rate at which it receives data from a publisher.
+
+Example:
+
+Subscription subscription;
+subscription.request(5); // request only 5 items
+
+Q5. Reactive Programming vs Traditional Programming
+Traditional	Reactive
+Blocking	Non-blocking
+Synchronous	Asynchronous
+Thread-per-request	Event-driven
+Reactive Programming in Java
+ Beginner
+Q6. What libraries support Reactive Programming in Java?
+
+Answer:
+
+Project Reactor (Flux, Mono)
+
+RxJava
+
+Akka Streams
+
+Q7. Difference between Mono and Flux?
+
+Answer:
+
+Mono → 0 or 1 element
+
+Flux → 0 to N elements
+
+Example:
+
+Mono<String> mono = Mono.just("Hello");
+Flux<Integer> flux = Flux.just(1, 2, 3);
+
+ Intermediate
+Q8. How does non-blocking work in reactive apps?
+
+Answer:
+Reactive apps use event loops instead of blocking threads, improving scalability.
+
+Building Reactive Applications
+ Beginner
+Q9. Why are reactive apps scalable?
+
+Answer:
+They use fewer threads and handle thousands of requests asynchronously.
+
+ Intermediate
+Q10. How error handling is done in reactive streams?
+
+Answer:
+
+flux
+ .doOnError(err -> log.error("Error occurred"))
+ .onErrorReturn(-1);
+
+ Networking & Java Socket Programming
+ Beginner
+Q11. What is Socket Programming?
+
+Answer:
+Socket programming enables communication between two machines over a network.
+
+Q12. What is ServerSocket?
+
+Answer:
+ServerSocket listens for incoming client connections.
+
+Example:
+
+ServerSocket serverSocket = new ServerSocket(8080);
+Socket socket = serverSocket.accept();
+
+Q13. What is Socket?
+
+Answer:
+Socket is used by the client to connect to a server.
+
+Socket socket = new Socket("localhost", 8080);
+
+ Intermediate
+Q14. Difference between TCP and UDP?
+TCP	UDP
+Reliable	Fast
+Connection-oriented	Connectionless
+Slower	Faster
+Q15. How to implement client-server communication?
+
+Answer:
+
+Server uses ServerSocket
+
+Client uses Socket
+
+Data sent via streams
+
+Debugging Using IntelliJ IDEA
+ Beginner
+Q16. What is debugging?
+
+Answer:
+Debugging is the process of finding and fixing bugs by executing code step by step.
+
+Q17. What are breakpoints?
+
+Answer:
+Breakpoints pause program execution at a specific line.
+
+Q18. Difference between Step Over, Step Into, Step Out?
+Action	Meaning
+Step Over	Execute method without entering
+Step Into	Go inside method
+Step Out	Exit current method
+ Intermediate
+Q19. What is Watch in IntelliJ?
+
+Answer:
+Watch allows monitoring variable values during debugging.
+
+Q20. What is conditional breakpoint?
+
+Answer:
+Breakpoint that triggers only when a condition is true.
+
+Reverse Engineering
+ Beginner
+Q21. What is Reverse Engineering?
+
+Answer:
+Reverse engineering analyzes an existing system to understand its design and behavior.
+
+Q22. Goals of Reverse Engineering?
+
+Answer:
+
+Understand legacy code
+
+Bug fixing
+
+Security analysis
+
+Q23. Steps in Reverse Engineering
+
+Answer:
+
+Code analysis
+
+Control flow analysis
+
+Data flow analysis
+
+Documentation
+
+ Intermediate
+Q24. Tools used for Reverse Engineering?
+
+Answer:
+
+JD-GUI
+
+JAD
+
+IntelliJ Decompiler
+
+Bytecode Viewer
+
+TDD, JUnit & Mockito
+ Beginner
+Q25. What is Test Driven Development (TDD)?
+
+Answer:
+TDD follows Red → Green → Refactor cycle.
+
+Q26. What is Unit Testing?
+
+Answer:
+Testing individual units of code in isolation.
+
+Q27. What is JUnit?
+
+Answer:
+JUnit is a Java testing framework.
+
+@Test
+void testAdd() {
+    assertEquals(5, add(2,3));
+}
+
+Q28. What is Arrange–Act–Assert?
+
+Answer:
+
+Arrange → setup data
+
+Act → execute method
+
+Assert → verify result
+
+ Intermediate
+Q29. Line Coverage vs Branch Coverage?
+Line	Branch
+Executes code lines	Tests all conditions
+Q30. What is Mockito?
+
+Answer:
+Mockito is a mocking framework used to simulate dependencies.
+
+Q31. Mock vs Stub vs Spy
+Type		Purpose
+Mock		Verify interactions
+Stub		Provide fake data
+Spy			Partial mock
+
+Logging – Log4J & SLF4J
+ Beginner
+Q32. Why logging is important?
+
+Answer:
+
+Debugging
+
+Monitoring
+
+Auditing
+
+Q33. What is Log4J?
+
+Answer:
+Log4J is a logging framework for Java.
+
+Logger logger = LogManager.getLogger(MyClass.class);
+logger.info("Application started");
+
+Q34. What are appenders?
+
+Answer:
+Appenders decide where logs go.
+
+Console
+
+File
+
+Rolling File
+
+Q35. What is a layout?
+
+Answer:
+Defines the format of log messages.
+
+ Intermediate
+Q36. Log4J2 Architecture?
+
+Answer:
+
+Logger
+
+Appender
+
+Layout
+
+Filter
+
+Q37. What is SLF4J?
+
+Answer:
+SLF4J is a logging facade that works with Log4J, Logback, etc.
+
+Q38. Why use SLF4J over Log4J directly?
+
+Answer:
+
+Loose coupling
+
+Easy framework switching
+
+Better performance
+
+Q39. Best Practices for Logging
+
+Answer:
+
+Use proper log levels
+
+Avoid logging sensitive data
+
+Use parameterized logging
+
+logger.info("User {} logged in", userId);
