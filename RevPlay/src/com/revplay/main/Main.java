@@ -9,6 +9,7 @@ import com.revplay.playlist.PlaylistSongService;
 import com.revplay.playlist.PlaylistService;
 import com.revplay.favorite.FavoriteService;
 import com.revplay.history.HistoryService;
+import com.revplay.player.PlayerService;
 
 import java.util.Scanner;
 
@@ -264,6 +265,7 @@ public class Main {
         PlaylistSongService playlistSongService = new PlaylistSongService();
         FavoriteService favoriteService = new FavoriteService();
         HistoryService historyService = new HistoryService();
+        PlayerService playerService = new PlayerService();
 
         while (true) {
             System.out.println("\n=== USER MENU ===");
@@ -280,6 +282,10 @@ public class Main {
             System.out.println("11. Remove Favorite");
             System.out.println("12. View Favorites");
             System.out.println("13. View Listening History");
+            System.out.println("14. Pause Song");
+            System.out.println("15. Resume Song");
+            System.out.println("16. Skip Song");
+            System.out.println("17. Toggle Repeat");
 
             int choice = sc.nextInt();
             sc.nextLine();
@@ -298,7 +304,8 @@ public class Main {
                     sc.nextLine();
                     songService.playSong(songId);
                     historyService.recordPlay(user.getUserId(), songId);
-                    System.out.println("Playing song...");
+//                    System.out.println("Playing song...");
+                    playerService.play(songId);
                 }
 
                 case 3 -> {
@@ -376,6 +383,22 @@ public class Main {
                 case 12 -> favoriteService.viewFavorites(user.getUserId());
 
                 case 13 -> historyService.viewHistory(user.getUserId());
+
+                case 14 -> playerService.pause();
+
+                case 15 -> playerService.resume();
+
+                case 16 -> {
+                    System.out.print("Next Song ID: ");
+                    int nextId = sc.nextInt();
+                    sc.nextLine();
+
+                    songService.playSong(nextId);
+                    historyService.recordPlay(user.getUserId(), nextId);
+                    playerService.skip(nextId);
+                }
+
+                case 17 -> playerService.toggleRepeat();
 
                 default -> System.out.println("Invalid choice");
             }

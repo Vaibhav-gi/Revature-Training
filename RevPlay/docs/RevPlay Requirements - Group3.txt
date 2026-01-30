@@ -12,7 +12,7 @@ Search the library of songs, artists, playlists, podcasts, and albums by keyword
 Browse content by categories (genre, artist, album)
 Mark songs as favorites
 View my favorite songs list
-Simulate music player controls (play, pause, skip, repeat) - text-based simulation
+Simulate music com.revplay.player controls (play, pause, skip, repeat) - text-based simulation
 Create private or public playlists with name and description
 Add songs to my playlists
 Remove songs from my playlists
