@@ -1,0 +1,306 @@
+PART 1: MySQL & SQL Fundamentals
+
+ Database & SQL Basics
+Q1. What is a Database?
+
+Answer:
+A database is an organized collection of data that can be easily accessed, managed, and updated.
+
+Example:
+A database storing user details: id, name, email, password
+
+Q2. What is SQL?
+
+Answer:
+SQL (Structured Query Language) is used to create, read, update, and delete data in a relational database.
+
+SELECT * FROM users;
+
+Q3. What is Consistency in a Database?
+
+Answer:
+Consistency ensures that a database moves from one valid state to another after a transaction.
+
+ RDBMS Concepts
+Q4. What is RDBMS?
+
+Answer:
+RDBMS stores data in tables (rows & columns) and enforces relationships using keys.
+
+Examples: MySQL, PostgreSQL, Oracle
+
+Q5. What is a Schema?
+
+Answer:
+A schema is a logical container for database objects like tables and views.
+
+CREATE SCHEMA company;
+
+Q6. What is a Table Structure?
+
+Answer:
+A table consists of:
+
+Columns (fields)
+
+Rows (records)
+
+CREATE TABLE employee (
+  id INT,
+  name VARCHAR(50),
+  salary DECIMAL(10,2)
+);
+
+Q7. SQL Data Types Examples
+Type		Example
+INT		Age
+VARCHAR	Name
+DATE	DOB
+DECIMAL	Salary
+
+ Normalization & Data Modeling
+Q8. What is Normalization?
+
+Answer:
+Normalization reduces data redundancy and improves data integrity.
+
+Forms:
+1NF, 2NF, 3NF
+
+Q9. What is Multiplicity?
+
+Answer:
+Multiplicity defines relationships:
+
+One-to-One
+
+One-to-Many
+
+Many-to-Many
+
+Q10. What is ERD?
+
+Answer:
+Entity Relationship Diagram visually represents entities and relationships.
+
+ Keys & Integrity
+Q11. What is a Primary Key?
+
+Answer:
+A primary key uniquely identifies a record and cannot be NULL.
+
+id INT PRIMARY KEY
+
+Q12. What is a Composite Key?
+
+Answer:
+A key formed using multiple columns.
+
+PRIMARY KEY (order_id, product_id)
+
+Q13. Foreign Key?
+
+Answer:
+Ensures referential integrity between tables.
+
+FOREIGN KEY (dept_id) REFERENCES department(id)
+
+Q14. Unique vs Alternate vs Secondary Key
+Key	          		Purpose
+Unique			No duplicate values
+Alternate	  	Candidate key not chosen as PK
+Secondary	 	Used for searching
+
+SQL Sublanguages
+Q15. SQL Sublanguages
+Type		Purpose
+DDL		CREATE, DROP
+DML		INSERT, UPDATE
+DQL		SELECT
+DCL		GRANT
+TCL		COMMIT
+
+Q16. CREATE vs DROP vs TRUNCATE
+Command	Description
+CREATE		Creates object
+DROP		Deletes object
+TRUNCATE	Deletes all rows
+
+Q17. Constraints
+
+Answer:
+Constraints enforce rules on data.
+
+NOT NULL, UNIQUE, CHECK, DEFAULT
+
+Q18. AUTO_INCREMENT
+id INT AUTO_INCREMENT PRIMARY KEY
+
+
+DML & Queries
+Q19. INSERT / UPDATE / DELETE
+INSERT INTO emp VALUES (1,'Amit');
+UPDATE emp SET name='Ravi' WHERE id=1;
+DELETE FROM emp WHERE id=1;
+
+Q20. Aggregate Functions
+Function	Purpose
+COUNT	Number of rows
+SUM		Total
+AVG		Average
+Q21. SQL Clauses
+SELECT dept, COUNT(*) 
+FROM emp
+GROUP BY dept
+HAVING COUNT(*) > 5;
+
+ Subqueries & Joins
+Q22. What is a Subquery?
+
+Answer:
+A query inside another query.
+
+SELECT * FROM emp WHERE salary >
+(SELECT AVG(salary) FROM emp);
+
+Q23. Types of Joins
+Join		Purpose
+Inner		Matching records
+Left		All left records
+Right	All right records
+Cross	Cartesian product
+
+ Transactions & Advanced SQL
+Q24. What is a Transaction?
+
+Answer:
+A transaction is a set of operations executed as a single unit.
+
+Q25. ACID Properties
+Property	Meaning
+Atomicity	All or nothing
+Consistency	Valid state
+Isolation	No interference
+Durability	Permanent
+Q26. Commit vs Rollback
+COMMIT;
+ROLLBACK;
+
+Q27. Indexes
+
+Answer:
+Indexes improve search performance.
+
+Q28. Views
+CREATE VIEW emp_view AS
+SELECT name, salary FROM emp;
+
+Q29. Stored Procedure vs Function
+
+Feature		Procedure		Function
+Return value	Optional		Mandatory
+
+PART 2: Java Basics
+
+Java Introduction
+Q30. What is Java?
+
+Answer:
+Java is a platform-independent, object-oriented language.
+
+Q31. JVM vs JRE vs JDK
+Term			Purpose
+JVM			Runs bytecode
+JRE			JVM + libraries
+JDK			JRE + compiler
+Q32. Primitive Data Types
+Type			Size
+int			4 bytes
+double		8 bytes
+boolean		1 bit
+
+ Variables & Control Flow
+Q33. Primitive vs Reference Variables
+Primitive		Reference
+Stores value	Stores address
+
+Q34. Conditional Statements
+if (age >= 18) {
+  System.out.println("Eligible");
+}
+
+Q35. Loops
+for(int i=1;i<=5;i++){
+  System.out.println(i);
+}
+
+ Arrays & Operators
+Q36. Arrays
+int[] arr = {1,2,3};
+
+Q37. Operators
+Type	Example
+Arithmetic	+ - *
+Logical	&&
+Comparison	== !=
+
+ Methods & Stack
+Q38. What is a Method?
+
+Answer:
+A method is a block of code performing a specific task.
+
+int add(int a, int b){
+  return a + b;
+}
+
+Q39. Method Parameters & Return Types
+
+Answer:
+Parameters accept data, return sends output.
+
+Q40. What is the Stack?
+
+Answer:
+Stack stores method calls and local variables.
+
+Q41. What is Recursion?
+
+Answer:
+A method calling itself.
+
+int fact(int n){
+  return n==1 ? 1 : n*fact(n-1);
+}
+
+ Strings, Casting & Wrappers
+Q42. String Basics
+
+Answer:
+String is immutable.
+
+String s = "Java";
+
+Q43. Value vs Reference Types
+
+Answer:
+
+Primitives → value
+
+Objects → reference
+
+Q44. Casting
+int x = (int) 10.5;
+
+Q45. Wrapper Classes
+Primitive	Wrapper
+int			Integer
+double		Double
+float                Float
+char                Character
+boolean         Boolean
+byte                 Byte
+long                 Long
+short               Short
+
+
